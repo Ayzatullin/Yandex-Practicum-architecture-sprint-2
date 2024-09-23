@@ -1,5 +1,5 @@
 version: '3'
-name: mongo-sharding-repl
+name: sharding-repl-cache
 services:
 
   configSrv:
