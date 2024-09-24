@@ -31,9 +31,6 @@ sh.enableSharding("somedb");
 sh.shardCollection("somedb.helloDoc", { "name" : "hashed" });
 
 use somedb;
-for(var i = 0; i < 10000; i++) db.helloDoc.insertOne({age:i, name:"ly"+i})
+for(var i = 0; i < 2000; i++) db.helloDoc.insertOne({age:i, name:"ly"+i})
 exit();
 EOF
-
-
-

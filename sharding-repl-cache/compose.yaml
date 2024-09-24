@@ -200,6 +200,21 @@ services:
       interval: 5s
       start_period: 10s
 
+  redis_1:
+    image: "redis:latest"
+    container_name: redis_1
+    ports:
+      - "6379"
+    volumes:
+      - redis_1_data:/data
+    command: [ "redis-server"]
+    networks:
+      app-network:
+        ipv4_address: 173.17.0.16
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      start_period: 10s
 
   pymongo_api:
     container_name: pymongo_api
@@ -217,6 +232,7 @@ services:
     environment:
       MONGODB_URL: "mongodb://mongos_router:27017"
       MONGODB_DATABASE_NAME: "somedb"
+      REDIS_URL: "redis://redis_1:6379"
 
 
 networks:
@@ -236,6 +252,4 @@ volumes:
   shard2-data:
   shard2-repl1-data:
   shard2-repl2-data:
-
-
-
+  redis_1_data: {}

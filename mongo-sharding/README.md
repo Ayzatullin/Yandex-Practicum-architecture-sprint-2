@@ -1,4 +1,4 @@
-# pymongo-api
+# pymongo-api | sharding
 
 ## Как запустить
 

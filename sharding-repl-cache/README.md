@@ -1,4 +1,4 @@
-# pymongo-api
+# pymongo-api  | sharding_repl_cache
 
 ## Как запустить
 
@@ -57,3 +57,6 @@ docker compose up -d
 ```shell
 ./scripts/shard-2-status.sh
 ```
+
+Скорость вызова эндпоинта:
+![Скорость вызова эндпоинта /helloDoc/users](images/redis.png)
